@@ -1,6 +1,6 @@
 import json
 import requests
-import sys
+
 
 class Optimizely:
     """ Minimal Optimizely API class """
@@ -11,13 +11,19 @@ class Optimizely:
         }
 
     def _call(self, method, endpoint, callback=None, data=None):
-        header = { 'Token': self.token }
+        header = {
+            'Token': self.token
+        }
+
         if data:
             header['content-type'] = 'application/json'
             data = json.dumps(data)
         uri = 'https://www.optimizelyapis.com/experiment/v1/{e}'.format(e=endpoint)
         response = method(uri, headers=header, data=data)
-        if self.settings['strict']: response.raise_for_status()
+
+        if self.settings['strict']:
+            response.raise_for_status()
+
         return callback(response.json()) if callback else response.json()
 
     def get(self, endpoint, callback=None):
