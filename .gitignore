@@ -53,4 +53,9 @@ docs/_build/
 # PyBuilder
 target/
 
+# IntelliJ Settings
 .idea/
+
+# Virtual environment
+venv/
+.DS_Store
