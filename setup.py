@@ -3,24 +3,17 @@
 import os
 import re
 import sys
-
 from codecs import open
-
 from setuptools import setup
-from setuptools.command.test import test as TestCommand
+from pytest import *
 
 packages = [
-    'requests',
-    'requests.packages',
-    'requests.packages.chardet',
-    'requests.packages.urllib3',
-    'requests.packages.urllib3.packages',
-    'requests.packages.urllib3.contrib',
-    'requests.packages.urllib3.util',
-    'requests.packages.urllib3.packages.ssl_match_hostname',
+    'optimizely'
 ]
 
-requires = []
+requires = [
+    'requests>=2.0.0'
+]
 
 test_requirements = [
     'pytest>=2.8.0',
@@ -41,35 +34,23 @@ setup(
     long_description=readme + '\n',
     author='Brendan Maione-Downing',
     author_email='b.maionedowning@gmail.com',
-    url='http://python-requests.org',
+    url='http://github.com/bmd/pyOptimizely',
     packages=packages,
     package_data={'': ['LICENSE', 'NOTICE'], 'requests': ['*.pem']},
-    package_dir={'requests': 'requests'},
     include_package_data=True,
     install_requires=requires,
-    license='Apache 2.0',
+    license='MIT',
     zip_safe=False,
     classifiers=(
         'Development Status :: 1 - In Development',
         'Intended Audience :: Developers',
         'Natural Language :: English',
-        'License :: OSI Approved :: Apache Software License',
+        'License :: MIT Software License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7'
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: Implementation :: CPython',
     ),
     cmdclass={'test': PyTest},
-    tests_require=test_requirements,
-    extras_require={
-        'security': [
-            'pyOpenSSL>=0.13',
-            'ndg-httpsclient',
-            'pyasn1'
-        ],
-        'socks': [
-            'PySocks>=1.5.6, !=1.5.7'
-        ],
-    },
+    tests_require=test_requirements
 )
