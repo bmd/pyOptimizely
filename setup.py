@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 
-import os
-import re
-import sys
 from codecs import open
 from setuptools import setup
-from pytest import *
 
 with open('README.md', 'r', 'utf-8') as f:
     readme = f.read()
@@ -32,6 +28,8 @@ setup(
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: Implementation :: CPython',

@@ -59,3 +59,5 @@ target/
 # Virtual environment
 venv/
 .DS_Store
+
+pytest.ini

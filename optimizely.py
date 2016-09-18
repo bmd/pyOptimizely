@@ -1,7 +1,6 @@
 import json
 import requests
 
-
 class Optimizely:
     """ A Python wrapper around the Optimizely REST API """
 
@@ -43,10 +42,11 @@ class Optimizely:
             and DELETE requests).
 
         Returns:
-            A dictionary object representing the serialized response from the
-            Optimizely API.
+            requests.response
         """
-        header = {'Token': self.token}
+        header = {
+            'Token': self.token
+        }
 
         if data:
             header['content-type'] = 'application/json'
@@ -55,7 +55,7 @@ class Optimizely:
         uri = Optimizely.api_base_url.format(endpoint=endpoint)
         response = method(uri, headers=header, data=data)
 
-        return response.json()
+        return response
 
     def get(self, endpoint):
         """ A semantic wrapper for GET requests.
@@ -65,8 +65,7 @@ class Optimizely:
             the Base URI. For example: '/experiments/123'
 
         Returns:
-            A dictionary object representing the serialized response from the
-            Optimizely API.
+            requests.response
         """
         return self._call(requests.get, endpoint)
 
@@ -80,8 +79,7 @@ class Optimizely:
             body.
 
         Returns:
-            A dictionary object representing the serialized response from the
-            Optimizely API.
+            requests.response
         """
         return self._call(requests.post, endpoint, data=data)
 
@@ -95,8 +93,7 @@ class Optimizely:
             body.
 
         Returns:
-            A dictionary object representing the serialized response from the
-            Optimizely API.
+            requests.response
         """
         return self._call(requests.put, endpoint, data=data)
 
@@ -108,7 +105,6 @@ class Optimizely:
             the Base URI. For example: '/experiments/123'
 
         Returns:
-            A dictionary object representing the serialized response from the
-            Optimizely API.
+            requests.response
         """
         return self._call(requests.delete, endpoint)
