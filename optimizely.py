@@ -1,6 +1,5 @@
 import json
 import requests
-from typing import Dict
 
 
 class Optimizely:
@@ -8,7 +7,7 @@ class Optimizely:
 
     api_base_url = 'https://www.optimizelyapis.com/experiment/v1/{endpoint}'
 
-    def __init__(self, token: str) -> None:
+    def __init__(self, token):
         """ Create an Optimizely object.
 
         The init method just sets a token so that later calls can re-uuse the
@@ -26,7 +25,7 @@ class Optimizely:
         """
         self.token = token
 
-    def _call(self, method: callable, endpoint: str, data: Dict = None) -> Dict:
+    def _call(self, method, endpoint, data=None):
         """ Generic method for calling the Optimizely API.
 
         Abstracts any required plumbing for the optimizely API (in thie case,
@@ -58,7 +57,7 @@ class Optimizely:
 
         return response.json()
 
-    def get(self, endpoint: str) -> Dict:
+    def get(self, endpoint):
         """ A semantic wrapper for GET requests.
 
         Args:
@@ -71,7 +70,7 @@ class Optimizely:
         """
         return self._call(requests.get, endpoint)
 
-    def post(self, endpoint: str, data: Dict) -> Dict:
+    def post(self, endpoint, data):
         """ Semantic wrapper for POST requests to the Optimizely REST API.
 
         Args:
@@ -86,7 +85,7 @@ class Optimizely:
         """
         return self._call(requests.post, endpoint, data=data)
 
-    def put(self, endpoint: str, data: Dict) -> Dict:
+    def put(self, endpoint, data):
         """ Semantic wrapper for PUT requests to the Optimizely REST API.
 
         Args:
@@ -101,7 +100,7 @@ class Optimizely:
         """
         return self._call(requests.put, endpoint, data=data)
 
-    def delete(self, endpoint: str) -> Dict:
+    def delete(self, endpoint):
         """ Semantic wrapper for DELETE requests to the Optimizely REST API.
 
         Args:
