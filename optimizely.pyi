@@ -1,7 +1,10 @@
 from requests import Response
 
 class Optimizely:
-    def __init__(self, token: str) -> None: ...
+    def __init__(self, token: str) -> None:
+        self._api_base_url = None
+        self._token = None
+        ...
 
     def _call(self, method: callable, endpoint: str, data: dict = None) -> Response: ...
 
