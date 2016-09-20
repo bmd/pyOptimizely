@@ -1,3 +1,4 @@
+# noinspection PyUnresolvedReferences
 import context
 from optimizely import Optimizely
 import requests
@@ -33,14 +34,3 @@ def test_updates_project():
     assert response.status_code == 202
     assert not response.json()['ip_filter']
 
-
-def test_creates_and_deletes_experiments():
-    """
-curl \
-  -H "Token: abcdefghijklmnopqrstuvwxyz:123456" \
-  -H "Content-Type: application/json" \
-  -d '{"edit_url":"https://mysite.com/products/","description":"My Experiment Name"}' \
-  "https://www.optimizelyapis.com/experiment/v1/projects/1234/experiments/"
-
-
-    """
