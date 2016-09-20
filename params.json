@@ -1,0 +1,6 @@
+{
+  "name": "Pyoptimizely",
+  "tagline": "A minimal python wrapper for the Optimizely REST API",
+  "body": "pyOptimizely\r\n============\r\n\r\n[![Build Status](https://travis-ci.org/bmd/pyOptimizely.svg?branch=master)](https://travis-ci.org/bmd/pyOptimizely)\r\n[![Coverage Status](https://coveralls.io/repos/github/bmd/pyOptimizely/badge.svg?branch=master)](https://coveralls.io/github/bmd/pyOptimizely?branch=master)\r\n[![Code Health](https://landscape.io/github/bmd/pyOptimizely/master/landscape.svg?style=flat)](https://landscape.io/github/bmd/pyOptimizely/master)\r\n\r\nA minimal python wrapper for the Optimizely REST API.\r\n\r\n_Note:_ This project has become more of a demo for correctly building a Python application that utilizes a Travis/Coveralls CI stack. It's _way_ overengineered for what it is an you should use something like [Tortilla](https://pypi.python.org/pypi/tortilla) for wrapping a simple REST API like Optimizely's.\r\n\r\n### Example\r\n\r\n```py\r\nfrom optimizely import Optimizely\r\n\r\nOPTIMIZELY_TOKEN = 'abc123'\r\n\r\nopt = Optimizely(OPTIMIZELY_TOKEN)\r\nexperiments = opt.get('/experiments').json()\r\n\r\nprint(json.dumps(experiments, indent=2))\r\n```",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

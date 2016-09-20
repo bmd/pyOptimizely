@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Pyoptimizely by bmd</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/bmd/pyOptimizely">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Pyoptimizely</h1>
+            <h2>A minimal python wrapper for the Optimizely REST API</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/bmd/pyOptimizely/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/bmd/pyOptimizely/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="pyoptimizely" class="anchor" href="#pyoptimizely" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>pyOptimizely</h1>
+
+<p><a href="https://travis-ci.org/bmd/pyOptimizely"><img src="https://travis-ci.org/bmd/pyOptimizely.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/bmd/pyOptimizely?branch=master"><img src="https://coveralls.io/repos/github/bmd/pyOptimizely/badge.svg?branch=master" alt="Coverage Status"></a>
+<a href="https://landscape.io/github/bmd/pyOptimizely/master"><img src="https://landscape.io/github/bmd/pyOptimizely/master/landscape.svg?style=flat" alt="Code Health"></a></p>
+
+<p>A minimal python wrapper for the Optimizely REST API.</p>
+
+<p><em>Note:</em> This project has become more of a demo for correctly building a Python application that utilizes a Travis/Coveralls CI stack. It's <em>way</em> overengineered for what it is an you should use something like <a href="https://pypi.python.org/pypi/tortilla">Tortilla</a> for wrapping a simple REST API like Optimizely's.</p>
+
+<h3>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h3>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> optimizely <span class="pl-k">import</span> Optimizely
+
+<span class="pl-c1">OPTIMIZELY_TOKEN</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>abc123<span class="pl-pds">'</span></span>
+
+opt <span class="pl-k">=</span> Optimizely(<span class="pl-c1">OPTIMIZELY_TOKEN</span>)
+experiments <span class="pl-k">=</span> opt.get(<span class="pl-s"><span class="pl-pds">'</span>/experiments<span class="pl-pds">'</span></span>).json()
+
+<span class="pl-c1">print</span>(json.dumps(experiments, <span class="pl-v">indent</span><span class="pl-k">=</span><span class="pl-c1">2</span>))</pre></div>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/bmd">bmd</a> can be found on <a href="https://github.com/bmd/pyOptimizely">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
